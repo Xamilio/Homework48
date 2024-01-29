@@ -22,7 +22,7 @@ public:
     void Del();
     void DelAll();
     void Print();
-    void Print(int pos = -1);
+    void Print(int pos);
     int GetCount();
 };
 
@@ -75,21 +75,18 @@ void List::DelAll()
 
 void List::Print(int pos)
 {
-    Element* temp = Head;
-    int i = 0;
-    while (temp != NULL)
+    if (pos < 0 || pos >= Count)
     {
-        i++;
-        if (i == pos)
-        {
-            cout << temp->data << " ";
-            cout << "\n\n";
-            return;
-        }        
+        cout << "Позиция корректна\n";
+        return;
+    }
+    Element* temp = Head;
+    for (int i = 0; i < pos; i++)
+    {
         temp = temp->Next;
     }
+    cout << "Элемент на позиции " << pos << ": " << temp->data << "\n";
 }
-
 void List::Print()
 {
     Element* temp = Head;
