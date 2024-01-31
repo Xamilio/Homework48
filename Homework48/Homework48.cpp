@@ -85,19 +85,8 @@ void List::Print(int pos)
     {
         temp = temp->Next;
     }
-    cout << "Элемент на позиции " << pos << ": " << temp->data << "\n";
+    cout << "Элемент позиции " << pos << ": " << temp->data << "\n";
 }
-void List::Print()
-{
-    Element* temp = Head;
-    while (temp != NULL)
-    {
-        cout << temp->data << " ";
-        temp = temp->Next;
-    }
-    cout << "\n\n";
-}
-
 int main()
 {
     List lst;
